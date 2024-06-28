@@ -37,7 +37,7 @@
             <button onclick="showTasks()">
                 <img src="tasks.png" alt="Tasks"> TASKS
             </button>
-            <button onclick="toggleSubMenu('inventory-submenu')">
+            <button onclick="toggleInventoryPopup()">
                 <img src="inventory.png" alt="Inventory"> Envanter
             </button>
             <button>
@@ -46,6 +46,20 @@
             <button onclick="showFriends()">
                 <img src="frens.png" alt="Friends"> FRENS
             </button>
+        </div>
+        <div class="inventory-popup" id="inventory-popup">
+            <h2>Envanter</h2>
+            <div class="item">
+                <img src="mama.png" alt="Mama">
+                <div class="item-count" id="food-count">10</div>
+                <button onclick="feed(event)">Kullan</button>
+            </div>
+            <div class="item">
+                <img src="su.png" alt="Su">
+                <div class="item-count" id="water-count">5</div>
+                <button onclick="giveWater(event)">Kullan</button>
+            </div>
+            <button onclick="closeInventoryPopup()">Kapat</button>
         </div>
     </div>
     <div id="popup" class="popup">
