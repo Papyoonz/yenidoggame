@@ -21,6 +21,7 @@ body {
     position: relative;
     box-sizing: border-box;
     padding: 10px;
+    justify-content: space-between;
 }
 .puppy-container {
     position: relative;
@@ -131,6 +132,38 @@ button:hover {
 }
 .popup button {
     margin-top: 10px;
+}
+.inventory-popup {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 300px;
+    background-color: white;
+    border: 2px solid #76c7c0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.inventory-popup .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+.inventory-popup img {
+    width: 50px;
+    height: 50px;
+}
+.inventory-popup .item-count {
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 10px;
 }
 .bottom-bar {
     position: absolute;
