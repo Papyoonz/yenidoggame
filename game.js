@@ -50,9 +50,9 @@ function clickPuppy() {
     }
 }
 
-function toggleSubMenu(subMenuId) {
-    const subMenu = document.getElementById(subMenuId);
-    subMenu.style.display = subMenu.style.display === 'none' || subMenu.style.display === '' ? 'block' : 'none';
+function toggleInventoryPopup() {
+    const inventoryPopup = document.getElementById('inventory-popup');
+    inventoryPopup.style.display = inventoryPopup.style.display === 'none' || inventoryPopup.style.display === '' ? 'flex' : 'none';
 }
 
 function showPopup() {
@@ -61,15 +61,6 @@ function showPopup() {
 
 function closePopup() {
     document.getElementById('popup').style.display = 'none';
-}
-
-function toggleInventoryPopup() {
-    const inventoryPopup = document.getElementById('inventory-popup');
-    inventoryPopup.style.display = inventoryPopup.style.display === 'none' || inventoryPopup.style.display === '' ? 'block' : 'none';
-}
-
-function closeInventoryPopup() {
-    document.getElementById('inventory-popup').style.display = 'none';
 }
 
 function showTasks() {
