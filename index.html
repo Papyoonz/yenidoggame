@@ -3,51 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yavru Köpek Oyunu</title>
+    <title>DOGALYPSE: Begins</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <div class="sidebar">
-            <div class="menu-item">
-                <img src="inventory.png" alt="Inventory" title="Inventory" onclick="toggleSubMenu('inventory-submenu')">
-                <div id="inventory-submenu" class="submenu">
-                    <div class="item">
-                        <img src="mama.png" alt="Mama Ver" title="Mama Ver" onclick="feed(event)">
-                        <div class="item-count" id="food-count">10</div>
-                    </div>
-                    <div class="item">
-                        <img src="su.png" alt="Su Ver" title="Su Ver" onclick="giveWater(event)">
-                        <div class="item-count" id="water-count">5</div>
-                    </div>
-                </div>
-            </div>
-            <div class="menu-item">
-                <img src="market.png" alt="Market" title="Market">
-            </div>
-        </div>
-        <div class="bar-container">
-            <div class="bar">
-                <div id="energy-bar" class="fill energy-fill" style="height: 1%;"></div>
-                <div class="label" id="energy-label">Enerji: 1%</div>
-            </div>
-        </div>
         <div class="main-content">
-            <h1>Yavru Köpek Oyunu</h1>
-            <img src="puppy.png" alt="Puppy" class="puppy" onclick="clickPuppy()">
+            <h1 class="title">DOGALYPSE: Begins</h1>
+            <div class="puppy-container">
+                <img src="puppy.png" alt="Puppy" class="puppy" onclick="clickPuppy()">
+            </div>
             <div class="gold-container">
                 <div class="gold-bg">
                     <span class="gold" id="gold-display">DOGGAR: 0</span>
                 </div>
             </div>
-        </div>
-        <div class="bar-container">
-            <div class="bar">
-                <div id="happiness-bar" class="fill happiness-fill" style="height: 100%;"></div>
-                <div class="label" id="happiness-label">Mutluluk: 100%</div>
+            <div class="bars">
+                <div class="bar">
+                    <div id="energy-bar" class="fill energy-fill" style="width: 1%;"></div>
+                    <div class="label" id="energy-label">Enerji: 1%</div>
+                </div>
+                <div class="bar">
+                    <div id="happiness-bar" class="fill happiness-fill" style="width: 100%;"></div>
+                    <div class="label" id="happiness-label">Mutluluk: 100%</div>
+                </div>
+                <div class="bar">
+                    <div id="experience-bar" class="fill experience-fill" style="width: 0%;"></div>
+                    <div class="label" id="experience-label">Deneyim: 0%</div>
+                </div>
             </div>
         </div>
-        <div class="sidebar"></div>
+        <div class="bottom-bar">
+            <button onclick="showTasks()">
+                <img src="tasks.png" alt="Tasks"> TASKS
+            </button>
+            <button onclick="toggleSubMenu('inventory-submenu')">
+                <img src="inventory.png" alt="Inventory"> Envanter
+            </button>
+            <button>
+                <img src="market.png" alt="Market"> Market
+            </button>
+            <button onclick="showFriends()">
+                <img src="frens.png" alt="Friends"> FRENS
+            </button>
+        </div>
     </div>
     <div id="popup" class="popup">
         <h2>Yeterli Kaynak Yok!</h2>
