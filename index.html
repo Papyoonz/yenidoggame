@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yavru Köpek Oyunu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+        .sidebar {
+            width: 200px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .sidebar .menu-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: rgba(0, 0, 255, 0.5);
+            border-radius: 5px;
+        }
+        .sidebar img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+        .sidebar .label {
+            color: white;
+            font-weight: bold;
+        }
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .puppy {
+            width: 200px;
+            height: auto;
+            cursor: pointer;
+        }
+        .bars {
+            margin: 20px;
+            width: 100%;
+            max-width: 400px;
+        }
+        .bar {
+            position: relative;
+            width: 100%;
+            background-color: #ddd;
+            border: 1px solid #aaa;
+            margin: 10px auto;
+            border-radius: 10px;
+        }
+        .fill {
+            height: 20px;
+            background-color: #76c7c0;
+            border-radius: 10px;
+        }
+        .label {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            top: 0;
+            left: 0;
+            height: 100%;
+            line-height: 20px;
+            color: #fff;
+            font-weight: bold;
+        }
+        .gold-container {
+            position: relative;
+            margin-top: 10px;
+        }
+        .gold-bg {
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 128, 0.7));
+            border-radius: 5px;
+            padding: 5px 10px;
+            display: inline-block;
+        }
+        .gold {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FFD700;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="menu-item">
+            <img src="inventory.png" alt="Inventory" title="Inventory">
+            <span class="label">Inventory</span>
+        </div>
+        <div class="menu-item">
+            <img src="market.png" alt="Market" title="Market">
+            <span class="label">Market</span>
+        </div>
+    </div>
+    <div class="main-content">
+        <h1>Yavru Köpek Oyunu</h1>
+        <img src="puppy.png" alt="Puppy" class="puppy" onclick="clickPuppy()">
+        <div class="gold-container">
+            <div class="gold-bg">
+                <span class="gold" id="gold-display">DOGGAR: 0</span>
+            </div>
+        </div>
+        <div>
+            <button onclick="feed()">Mama Ver</button>
+            <button onclick="giveWater()">Su Ver</button>
+        </div>
+        <div class="bars">
+            <div class="bar">
+                <div id="energy-bar" class="fill" style="width: 1%;"></div>
+                <div class="label" id="energy-label">Enerji: 1%</div>
+            </div>
+            <div class="bar">
+                <div id="happiness-bar" class="fill" style="width: 100%;"></div>
+                <div class="label" id="happiness-label">Mutluluk: 100%</div>
+            </div>
+            <div class="bar">
+                <div id="experience-bar" class="fill" style="width: 0%;"></div>
+                <div class="label" id="experience-label">Deneyim: 0%</div>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
