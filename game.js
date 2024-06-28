@@ -63,6 +63,23 @@ function closePopup() {
     document.getElementById('popup').style.display = 'none';
 }
 
+function toggleInventoryPopup() {
+    const inventoryPopup = document.getElementById('inventory-popup');
+    inventoryPopup.style.display = inventoryPopup.style.display === 'none' || inventoryPopup.style.display === '' ? 'block' : 'none';
+}
+
+function closeInventoryPopup() {
+    document.getElementById('inventory-popup').style.display = 'none';
+}
+
+function showTasks() {
+    alert("Tasks button clicked!");
+}
+
+function showFriends() {
+    alert("Friends button clicked!");
+}
+
 setInterval(() => {
     energy = Math.max(0, energy - 1);
     updateBars();
