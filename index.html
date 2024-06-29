@@ -6,12 +6,12 @@
     <title>DOGALYPSE: Begins</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body onclick="closeMenus()">
     <div class="container">
         <div class="main-content">
             <h1 class="title">DOGALYPSE: Begins</h1>
             <div class="puppy-container">
-                <img src="puppy.png" alt="Puppy" class="puppy" onclick="clickPuppy()">
+                <img src="puppy.png" alt="Puppy" class="puppy" onclick="clickPuppy(event)">
             </div>
             <div class="gold-container">
                 <div class="gold-bg">
@@ -27,23 +27,23 @@
                     <div id="happiness-bar" class="fill happiness-fill" style="width: 100%;"></div>
                     <div class="label" id="happiness-label">Mutluluk: 100%</div>
                 </div>
-                <div class=" bar">
+                <div class="bar">
                     <div id="experience-bar" class="fill experience-fill" style="width: 0%;"></div>
                     <div class="label" id="experience-label">Deneyim: 0%</div>
                 </div>
             </div>
         </div>
         <div class="bottom-bar">
-            <button onclick="showTasks()">
+            <button onclick="showTasks(event)">
                 <img src="tasks.png" alt="Tasks"> TASKS
             </button>
-            <button onclick="toggleInventoryPopup()">
+            <button onclick="toggleInventoryPopup(event)">
                 <img src="inventory.png" alt="Inventory"> Envanter
             </button>
-            <button onclick="toggleMarketPopup()">
+            <button onclick="toggleMarketPopup(event)">
                 <img src="market.png" alt="Market"> Market
             </button>
-            <button onclick="showFriends()">
+            <button onclick="showFriends(event)">
                 <img src="frens.png" alt="Friends"> FRENS
             </button>
         </div>
@@ -63,17 +63,17 @@
             <div class="item">
                 <img src="mama.png" alt="Mama">
                 <h3>1 Adet Mama</h3>
-                <button onclick="buyItem('mama', 1)">Satın Al</button>
+                <button onclick="buyItem(event, 'mama', 1)">Satın Al</button>
             </div>
             <div class="item">
                 <img src="mama.png" alt="Mama">
                 <h3>10 Adet Mama</h3>
-                <button onclick="buyItem('mama', 10)">Satın Al</button>
+                <button onclick="buyItem(event, 'mama', 10)">Satın Al</button>
             </div>
             <div class="item">
                 <img src="su.png" alt="Su">
                 <h3>1 Adet Su</h3>
-                <button onclick="buyItem('su', 1)">Satın Al</button>
+                <button onclick="buyItem(event, 'su', 1)">Satın Al</button>
             </div>
             <div class="item">
                 <h3>Yakında</h3>

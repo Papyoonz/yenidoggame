@@ -41,7 +41,8 @@ function giveWater(event) {
     }
 }
 
-function clickPuppy() {
+function clickPuppy(event) {
+    event.stopPropagation();
     if (energy > 0) {
         energy = Math.max(0, energy - 1);
         let earnedGold = Math.floor(Math.random() * 10) + 1;
@@ -50,12 +51,14 @@ function clickPuppy() {
     }
 }
 
-function toggleInventoryPopup() {
+function toggleInventoryPopup(event) {
+    event.stopPropagation();
     const inventoryPopup = document.getElementById('inventory-popup');
     inventoryPopup.style.display = inventoryPopup.style.display === 'none' || inventoryPopup.style.display === '' ? 'flex' : 'none';
 }
 
-function toggleMarketPopup() {
+function toggleMarketPopup(event) {
+    event.stopPropagation();
     const marketPopup = document.getElementById('market-popup');
     marketPopup.style.display = marketPopup.style.display === 'none' || marketPopup.style.display === '' ? 'flex' : 'none';
 }
@@ -68,7 +71,8 @@ function closePopup() {
     document.getElementById('popup').style.display = 'none';
 }
 
-function buyItem(item, quantity) {
+function buyItem(event, item, quantity) {
+    event.stopPropagation();
     if (item === 'mama') {
         foodCount += quantity;
     } else if (item === 'su') {
@@ -77,11 +81,18 @@ function buyItem(item, quantity) {
     updateBars();
 }
 
-function showTasks() {
+function closeMenus() {
+    document.getElementById('inventory-popup').style.display = 'none';
+    document.getElementById('market-popup').style.display = 'none';
+}
+
+function showTasks(event) {
+    event.stopPropagation();
     alert("Tasks button clicked!");
 }
 
-function showFriends() {
+function showFriends(event) {
+    event.stopPropagation();
     alert("Friends button clicked!");
 }
 
