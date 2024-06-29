@@ -71,6 +71,14 @@ function closePopup() {
     document.getElementById('popup').style.display = 'none';
 }
 
+function showSuccessPopup() {
+    document.getElementById('success-popup').style.display = 'block';
+}
+
+function closeSuccessPopup() {
+    document.getElementById('success-popup').style.display = 'none';
+}
+
 function buyItem(event, item, quantity) {
     event.stopPropagation();
     if (item === 'mama') {
@@ -79,6 +87,7 @@ function buyItem(event, item, quantity) {
         waterCount += quantity;
     }
     updateBars();
+    showSuccessPopup();
 }
 
 function closeMenus() {
