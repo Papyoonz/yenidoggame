@@ -134,8 +134,14 @@ button:hover {
 .popup h2 {
     margin: 0 0 10px;
 }
+.popup p {
+    margin: 10px 0;
+}
 .popup button {
     margin-top: 10px;
+}
+.bot-alert {
+    animation: blink 1s infinite;
 }
 .inventory-popup, .market-popup {
     display: none;
@@ -252,4 +258,51 @@ button:hover {
     text-shadow: 3px 3px 5px rgba(0,0,0,0.7);
     position: relative;
     text-align: center;
+}
+.animate {
+    animation: blink 1s ease-in-out;
+}
+
+.bot-active {
+    border: 2px solid #00FF00;
+    box-shadow: 0 0 10px #00FF00;
+    border-radius: 50%;
+}
+
+.bot-inactive {
+    border: 2px solid #FF0000;
+    box-shadow: 0 0 10px #FF0000;
+    border-radius: 50%;
+}
+
+#bot-gift-popup {
+    display: none;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 5px;
+    color: white;
+    text-align: center;
+}
+
+#bot-gift-popup p {
+    margin: 0;
+    font-size: 12px;
+}
+
+@keyframes blink {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }

@@ -6,8 +6,8 @@
     <title>DOGALYPSE: Begins</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body onclick="closeMenus()">
-    <div class="container">
+<body>
+    <div class="container" id="game-container">
         <div class="main-content">
             <h1 class="title">DOGALYPSE: Begins</h1>
             <div class="puppy-container">
@@ -15,17 +15,17 @@
             </div>
             <div class="gold-container">
                 <div class="gold-bg">
-                    <span class="gold" id="gold-display">DOGGAR: 0</span>
+                    <span class="gold" id="gold-display">DOGGAR: 10</span>
                 </div>
             </div>
             <div class="bars">
                 <div class="bar">
-                    <div id="energy-bar" class="fill energy-fill" style="width: 1%;"></div>
-                    <div class="label" id="energy-label">Enerji: 1%</div>
+                    <div id="energy-bar" class="fill energy-fill" style="width: 50%;"></div>
+                    <div class="label" id="energy-label">Enerji: 50%</div>
                 </div>
                 <div class="bar">
-                    <div id="happiness-bar" class="fill happiness-fill" style="width: 100%;"></div>
-                    <div class="label" id="happiness-label">Mutluluk: 100%</div>
+                    <div id="happiness-bar" class="fill happiness-fill" style="width: 10%;"></div>
+                    <div class="label" id="happiness-label">Mutluluk: 10%</div>
                 </div>
                 <div class="bar">
                     <div id="experience-bar" class="fill experience-fill" style="width: 0%;"></div>
@@ -50,12 +50,12 @@
         <div class="inventory-popup" id="inventory-popup">
             <div class="item">
                 <img src="mama.png" alt="Mama">
-                <div class="item-count" id="food-count">10</div>
+                <div class="item-count" id="food-count">5</div>
                 <button onclick="feed(event)">Kullan</button>
             </div>
             <div class="item">
                 <img src="su.png" alt="Su">
-                <div class="item-count" id="water-count">5</div>
+                <div class="item-count" id="water-count">1</div>
                 <button onclick="giveWater(event)">Kullan</button>
             </div>
         </div>
@@ -79,7 +79,23 @@
                 </button>
             </div>
             <div class="item">
-                <h3>Yakında</h3>
+                <button onclick="buyItem(event, 'bot', 1)">
+                    <img src="bot.png" alt="Bot">
+                    <span>1X</span>
+                </button>
+            </div>
+            <div class="item">
+                <button onclick="buyItem(event, 'toys', 1)">
+                    <img src="toys.png" alt="Toys">
+                    <span>1X</span>
+                </button>
+            </div>
+        </div>
+        <div id="bot-icon" onclick="toggleBot()" style="display: none; position: absolute; top: 10px; right: 10px; cursor: pointer;">
+            <img src="bot.png" alt="Bot" style="width: 50px; height: 50px;">
+            <div id="bot-gift-popup" class="popup" style="display: none; position: absolute; top: -10px; right: -10px;">
+                <img id="gift-icon" src="" alt="Gift" style="width: 30px; height: 30px;">
+                <p>Kazandınız!</p>
             </div>
         </div>
     </div>
@@ -90,7 +106,17 @@
     </div>
     <div id="success-popup" class="popup">
         <h2>Satın Alma Başarılı!</h2>
+        <p>Kalan Doggar: <span id="remaining-doggar"></span></p>
         <button onclick="closeSuccessPopup()">Kapat</button>
+    </div>
+    <div id="insufficient-funds-popup" class="popup">
+        <h2>Yeterli Doggar Yok!</h2>
+        <button onclick="closeInsufficientFundsPopup()">Kapat</button>
+    </div>
+    <div id="bot-alert-popup" class="popup bot-alert">
+        <h2>Uyarı!</h2>
+        <p>Su ve mama bitti, lütfen satın alınız!</p>
+        <button onclick="closeBotAlertPopup()">Tamam</button>
     </div>
     <script src="game.js"></script>
 </body>
