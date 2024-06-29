@@ -27,7 +27,7 @@
                     <div id="happiness-bar" class="fill happiness-fill" style="width: 100%;"></div>
                     <div class="label" id="happiness-label">Mutluluk: 100%</div>
                 </div>
-                <div class="bar">
+                <div class=" bar">
                     <div id="experience-bar" class="fill experience-fill" style="width: 0%;"></div>
                     <div class="label" id="experience-label">Deneyim: 0%</div>
                 </div>
@@ -40,7 +40,7 @@
             <button onclick="toggleInventoryPopup()">
                 <img src="inventory.png" alt="Inventory"> Envanter
             </button>
-            <button>
+            <button onclick="toggleMarketPopup()">
                 <img src="market.png" alt="Market"> Market
             </button>
             <button onclick="showFriends()">
@@ -57,6 +57,26 @@
                 <img src="su.png" alt="Su">
                 <div class="item-count" id="water-count">5</div>
                 <button onclick="giveWater(event)">Kullan</button>
+            </div>
+        </div>
+        <div class="market-popup" id="market-popup">
+            <div class="item">
+                <img src="mama.png" alt="Mama">
+                <h3>1 Adet Mama</h3>
+                <button onclick="buyItem('mama', 1)">Satın Al</button>
+            </div>
+            <div class="item">
+                <img src="mama.png" alt="Mama">
+                <h3>10 Adet Mama</h3>
+                <button onclick="buyItem('mama', 10)">Satın Al</button>
+            </div>
+            <div class="item">
+                <img src="su.png" alt="Su">
+                <h3>1 Adet Su</h3>
+                <button onclick="buyItem('su', 1)">Satın Al</button>
+            </div>
+            <div class="item">
+                <h3>Yakında</h3>
             </div>
         </div>
     </div>

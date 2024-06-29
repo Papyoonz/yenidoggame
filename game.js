@@ -55,12 +55,26 @@ function toggleInventoryPopup() {
     inventoryPopup.style.display = inventoryPopup.style.display === 'none' || inventoryPopup.style.display === '' ? 'flex' : 'none';
 }
 
+function toggleMarketPopup() {
+    const marketPopup = document.getElementById('market-popup');
+    marketPopup.style.display = marketPopup.style.display === 'none' || marketPopup.style.display === '' ? 'flex' : 'none';
+}
+
 function showPopup() {
     document.getElementById('popup').style.display = 'block';
 }
 
 function closePopup() {
     document.getElementById('popup').style.display = 'none';
+}
+
+function buyItem(item, quantity) {
+    if (item === 'mama') {
+        foodCount += quantity;
+    } else if (item === 'su') {
+        waterCount += quantity;
+    }
+    updateBars();
 }
 
 function showTasks() {
